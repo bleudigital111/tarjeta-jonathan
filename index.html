@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bleu Inmobiliaria</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ================= RESET ================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      /* ================= BODY ================= */
+      body {
+        background: radial-gradient(circle at center, #0b3d66 0%, #072c4a 70%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* ================= CONTENEDOR ================= */
+      .container {
+        width: 100%;
+        max-width: 480px;
+        background: linear-gradient(180deg, #072c4a 0%, #0b3d66 100%);
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ================= HEADER ================= */
+      .header {
+        text-align: center;
+        padding: 60px 30px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* ===== LOGO PNG TRANSPARENTE ===== */
+      .logo-container {
+        width: 260px;
+        height: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .logo-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 20px 40px rgb(255, 255, 255));
+      }
+
+      /* Animación flotante elegante */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* ================= CARD ================= */
+      .card {
+        background: #f4f6f8;
+        border-radius: 40px 40px 0 0;
+        padding: 45px 25px;
+        text-align: center;
+      }
+
+      /* ================= BOTONES ================= */
+      .btn {
+        width: 100%;
+        padding: 18px;
+        border: none;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        color: white;
+      }
+
+      .whatsapp {
+        background: linear-gradient(90deg, #2ec5f2, #1f6fb2);
+      }
+
+      .catalogo {
+        background: linear-gradient(90deg, #1f6fb2, #0b3d66);
+      }
+
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      /* ================= QR ================= */
+      .qr {
+        margin-top: 30px;
+      }
+
+      .qr img {
+        width: 160px;
+        max-width: 100%;
+      }
+
+      /* ================= REDES SOCIALES ================= */
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .socials a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #2ec5f2;
+        color: white;
+        font-size: 24px;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        text-decoration: none;
+      }
+
+      .socials a:hover {
+        transform: scale(1.2);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      /* ================= FOOTER ================= */
+      .footer {
+        text-align: center;
+        font-size: 13px;
+        padding: 20px;
+        color: white;
+        background: #072c4a;
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 480px) {
+        .logo-container {
+          width: 200px;
+          height: 200px;
+        }
+        .btn {
+          font-size: 16px;
+          padding: 16px;
+        }
+        .socials a {
+          width: 45px;
+          height: 45px;
+          font-size: 22px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 520px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <!-- LOGO PNG TRANSPARENTE -->
+        <div class="logo-container">
+          <img src="./img/896.png" alt="Bleu Inmobiliaria" class="logo-img" />
+        </div>
+      </div>
+
+      <div class="card">
+        <button class="btn whatsapp" onclick="openWhatsApp()">
+          <i class="fab fa-whatsapp"></i> Escríbeme ahora
+        </button>
+
+        <button class="btn catalogo" onclick="openCatalogo()">
+          <i class="fas fa-globe"></i> Ver Catálogo Infinito
+        </button>
+
+        <div class="qr">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://bleudigital111.github.io/catalogo123/"
+            alt="QR Code"
+          />
+        </div>
+        <!-- REDES SOCIALES -->
+        <div class="socials">
+          <a href="https://www.facebook.com/share/1E2wwzHRKg/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">Conectando hogares, expandiendo horizontes.</div>
+    </div>
+
+    <script>
+      function openWhatsApp() {
+        const mensaje = encodeURIComponent(
+          "¡Hola! 👋 Me interesa recibir información sobre propiedades con Bleu Inmobiliaria."
+        );
+        window.open(`https://wa.me/527293108476?text=${mensaje}`, "_blank");
+      }
+
+      function openCatalogo() {
+        window.open("https://bleudigital111.github.io/catalogo123/", "_blank");
+      }
+    </script>
+  </body>
+</html>
