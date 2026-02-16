@@ -68,7 +68,7 @@
         filter: drop-shadow(0 20px 40px rgb(255, 255, 255));
       }
 
-      /* Animación flotante elegante */
+      /* Animación flotante */
       @keyframes float {
         0% {
           transform: translateY(0px);
@@ -113,6 +113,10 @@
 
       .catalogo {
         background: linear-gradient(90deg, #1f6fb2, #0b3d66);
+      }
+
+      .vender {
+        background: linear-gradient(90deg, #0b3d66, #2ec5f2);
       }
 
       .btn:hover {
@@ -195,28 +199,36 @@
   <body>
     <div class="container">
       <div class="header">
-        <!-- LOGO PNG TRANSPARENTE -->
         <div class="logo-container">
           <img src="./img/896.png" alt="Bleu Inmobiliaria" class="logo-img" />
         </div>
       </div>
 
       <div class="card">
+        <!-- BOTÓN WHATSAPP -->
         <button class="btn whatsapp" onclick="openWhatsApp()">
           <i class="fab fa-whatsapp"></i> Escríbeme ahora
         </button>
 
+        <!-- BOTÓN CATÁLOGO -->
         <button class="btn catalogo" onclick="openCatalogo()">
           <i class="fas fa-globe"></i> Ver Catálogo Infinito
         </button>
 
+        <!-- NUEVO BOTÓN VENDER -->
+        <button class="btn vender" onclick="openVender()">
+          <i class="fas fa-house-user"></i> Vende tu casa con nosotros
+        </button>
+
+        <!-- QR -->
         <div class="qr">
           <img
             src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://bleudigital111.github.io/catalogo123/"
             alt="QR Code"
           />
         </div>
-        <!-- REDES SOCIALES -->
+
+        <!-- REDES -->
         <div class="socials">
           <a href="https://www.facebook.com/share/1E2wwzHRKg/" target="_blank">
             <i class="fab fa-facebook-f"></i>
@@ -237,6 +249,13 @@
 
       function openCatalogo() {
         window.open("https://bleudigital111.github.io/catalogo123/", "_blank");
+      }
+
+      function openVender() {
+        window.open(
+          "https://bleudigital111.github.io/formulario-para-venta-de-casa-/",
+          "_blank"
+        );
       }
     </script>
   </body>
